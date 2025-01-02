@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- logo -->
+    <link rel="icon" type="image/x-icon" href="images/icon.png" class="w-auto">
+    <title>To-Do List with Overdue</title>
+  </head>
+  <body class="bg-sky-300 min-h-screen">
+    <div class="bg-sky-100 w-full max-w-lg  mx-auto shadow-md rounded-lg overflow-hidden">
+        <!-- Header Section -->
+        <header class="relative text-white py-12 px-6 flex items-center justify-between">
+          <div class="absolute inset-0">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-blue-600"></path>
+            </svg>
+          </div>
+          <div class="relative flex items-center">
+            <img class="w-12 h-12 rounded-full mr-4" src="https://via.placeholder.com/150" alt="Avatar">
+            <div>
+              <h1 class="text-xl font-semibold text-black">John Doe</h1>
+              <p class="text-sm text-black">Full Stack Developer</p>
+            </div>
+          </div>
+          <h2 class="relative text-lg font-bold text-black">To-Do List</h2>
+        </header>
+    
+        <!-- Main Content -->
+        <main class="p-6">
+          <!-- Input Section -->
+          <div class="mb-4">
+            <textarea id="taskInput" placeholder="Enter task..." class="w-full p-2 border rounded mb-2"></textarea>
+            <input id="dueDateInput" type="date" class="w-full p-2 border rounded mb-2">
+            <label for="priorityInput" class="block text-sm font-medium text-gray-600"> Priority</label>
+            <select id="priorityInput" class="w-full p-2 border rounded mb-2">
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+            <button onclick="addTask()" class="w-full bg-blue-600 text-white py-2 rounded hover:-translate-y-0.5 transition duration-300">Add Task</button>
+            <button onclick="clearAllTasks()" class="w-full bg-red-600 text-white py-2 rounded mt-2 hover:-translate-y-0.5 transition duration-300">Clear All Tasks</button>
+          </div>
+    
+          <!-- Filtered Task Sections -->
+          <div id="taskSections" class="space-y-6">
+            <div id="todaySection" class="hidden">
+              <h3 class="text-lg font-bold mb-2">Today's Tasks</h3>
+              <ul id="todayTasks" class="space-y-4"></ul>
+            </div>
+    
+            <div id="overdueSection" class="hidden">
+              <h3 class="text-lg font-bold mb-2">Overdue Tasks</h3>
+              <ul id="overdueTasks" class="space-y-4"></ul>
+            </div>
+    
+            <div id="completedSection" class="hidden">
+              <h3 class="text-lg font-bold mb-2">Completed Tasks</h3>
+              <ul id="completedTasks" class="space-y-4"></ul>
+            </div>
+    
+            <div id="allSection" class="hidden">
+              <h3 class="text-lg font-bold mb-2">All Tasks</h3>
+              <ul id="allTasks" class="space-y-4"></ul>
+            </div>
+          </div>
+        </main>
+
+
+        <!-- Footer -->
+        <footer class="relative">
+        <div class="inset-0">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="fill-blue-600"></path>
+        </svg>
+        <p class="absolute bottom-0 left-0 right-0 text-center text-white">Copyright &copy; 2025 @ricj</p>
+        </div>
+      </footer>
+      </div>
+
+      
+  
+</body>
+
+
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Lato', 'sans-serif'],
+          },
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+</html>
